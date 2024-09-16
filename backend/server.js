@@ -1,4 +1,5 @@
 // server.js
+//Rutas conectadas al servidor express
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -11,8 +12,10 @@ const nftRoutes = require('./routes/nftRoutes');
 const app = express();
 
 app.use(cors());
-app.use(express.json());
+//Middleware para procesar datos JSON
 
+app.use(express.json());
+// Conectar las rutas de usuario
 app.use('/api/users', userRoutes);
 app.use('/api/nfts', nftRoutes);
 
